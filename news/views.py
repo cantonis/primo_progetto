@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, render
+from django.views.generic.detail import DetailView
 
 from .models import Articolo, Giornalista
 
@@ -14,8 +15,6 @@ def home(request):
     return render(request, "home-news.html", context)
 
 
-def articoloDetailView(request, pk):
-    articolo = get_object_or_404(Articolo, pk=pk)
-    context = {"articolo": articolo}
-
-    return render(request, "articolo-detail.html", context)
+class articoloDetailViewCB(DetailView):
+    model = Articolo
+    template_name = "articolo-detail.html"
