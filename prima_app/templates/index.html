@@ -2,20 +2,26 @@
 {% block title %} {{block.super}} | Index {% endblock title %}
 {% block content %}
 <h1>Index</h1>
+<ul>
+    <li>Prima app</li>
     <ul>
-        <li>Prima app</li>
-        <ul>
-            <li><a href="{% url 'prima_app:homepage' %}">Homepage</a></li>
-            <li><a href="{% url 'prima_app:menu' %}">Menu</a></li>
-            <li><a href="{% url 'prima_app:chi-siamo' %}">Chi siamo</a></li>
-            <li><a href="{% url 'prima_app:variabili' %}">Variabili</a></li>
-        </ul>
-        <li>Seconda app</li>
-        <ul>
-            <li><a href="{% url 'seconda_app:if' %}">Esercizio if</a></li>
-            <li><a href="{% url 'seconda_app:ifelse' %}">Esercizio if-else</a></li>
-            <li><a href="{% url 'seconda_app:ifelif' %}">Esercizio if-elif</a></li>
-            <li><a href="{% url 'seconda_app:for' %}">Esercizio for</a></li>
-        </ul>
+        <li><a href="{% url 'prima_app:homepage' %}">Homepage</a></li>
+        <li><a href="{% url 'prima_app:menu' %}">Menu</a></li>
+        <li><a href="{% url 'prima_app:chi-siamo' %}">Chi siamo</a></li>
+        <li><a href="{% url 'prima_app:variabili' %}">Variabili</a></li>
     </ul>
+    <li>Seconda app</li>
+    <ul>
+        <li><a href="{% url 'seconda_app:if' %}">Esercizio if</a></li>
+        <li><a href="{% url 'seconda_app:ifelse' %}">Esercizio if-else</a></li>
+        <li><a href="{% url 'seconda_app:ifelif' %}">Esercizio if-elif</a></li>
+        <li><a href="{% url 'seconda_app:for' %}">Esercizio for</a></li>
+    </ul>
+    <li>News</li>
+    <ul>
+        <li><a href="{% url 'news:homeview' %}">Homepage news</a></li>
+        <li><a href="{% url 'news:lista_articoli' %}">Lista articoli</a></li>
+        <li><a href="{% url 'news:lista_giornalisti' %}">Lista giornalisti</a></li>
+    </ul>
+</ul>
 {% endblock content %}
