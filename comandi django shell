@@ -1,0 +1,16 @@
+from news.models import Giornalista --> importa il modulo del Giornalista per essere usato
+Giornalista.objects.all() --> mostra tutte le istanze di Giornalista
+g1 = Giornalista(nome="Mario", cognome="Rossi") --> crea un istanza di Giornalista con nome e cognome settati
+g1.save() --> salva l'istanza di g1
+g2 = Giornalista() --> crea un istanza vuota di Giornalista
+g2.nome = "Pinco" --> imposta il nome del Giornalista
+g2.cognome = "Pallo" --> imposta il cognome del Giornalista
+g1 --> mostra i dati di g1
+g1.nome --> mostra il nome di g1
+Giornalista.objects.create(nome="Nome", cognome="Cognome") --> crea un Giornalista e lo salva in automatico senza il save()
+g1.id / g1.pk --> mostra l'ID univoco di g1
+Giornalista.objects.get(pk=1) --> recupera dai giornalisti quello con l'id = 1
+Giornalista.objects.filter(nome="Mario") --> filtra tutti i giornalisti con nome Mario
+Giornalista.objects.exclude(cognome="Rossi") --> mostra tutti gli oggetti tranne quelli con cognome Rossi
+gio = Giornalista.objects.get(pk=1) gio.delete() --> elimina un Giornalista
+gio.articoli.all() --> stampa gli articoli di un giornalista
