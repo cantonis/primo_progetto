@@ -7,15 +7,15 @@ from .models import Articolo, Giornalista
 
 
 def home(request):
-    a = ""
-    g = ""
+    a = []
+    g = []
 
     for art in Articolo.objects.all():
-        a += art.titolo + "<br>"
+        a.append(art.titolo)
 
     for gio in Giornalista.objects.all():
-        g += gio.nome + " " + gio.cognome + "<br>"
+        g.append(gio.nome + " " + gio.cognome)
 
-    response = "Articoli:<br>" + a + "Giornalisti:<br>" + g
+    response = str(a) + "<br>" + str(g)
 
     return HttpResponse("<h1>" + response + "</h1>")
