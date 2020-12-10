@@ -1,0 +1,14 @@
+{% extends 'base.html'  %}
+{% block title %} {{block.super}} | {{autore_cs}}
+{% endblock title %}
+{% block content %}
+<h1>{{autore_cs}}</h1>
+<h3><strong>Nazione: </strong>{{autore_cs.nazione}}</h3>
+<br>
+{% for libro in autore_cs.libri.all %}
+    <h4><strong>Titolo: </strong>{{libro.titolo}}</h4>
+    <h5><strong>Genere: </strong>{% for genere in libro.genere.all %}{{genere}} {% endfor %}</h5>
+    <h5><strong>ISBN: </strong>{{libro.isbn}}</h5>
+    <hr>
+{% endfor %}
+{% endblock content %}
